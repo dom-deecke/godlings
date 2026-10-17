@@ -204,3 +204,37 @@ The complete project, original artwork, derived artwork, and this handoff are
 stored as normal files in https://github.com/dom-deecke/godlings .
 Clone or download the repository and open its root in Unity Hub.
 The release ZIP is a historical backup, not required to obtain the source.
+
+URP MIGRATION — 17 October 2026
+Rendering now uses Universal Render Pipeline 17.6.0 with its 2D renderer
+(Unity 6000.6.6f1). Gamma color space, artwork, projection, palette, sorting,
+and gameplay are preserved. No lighting or post-processing is added.
+Assets/Godlings/Rendering contains the pipeline, 2D renderer, and explicit
+unlit materials. SpriteUnlit uses Unity's URP sprite shader; VertexColorUnlit
+is a small URP shader for the existing colored floor and warning meshes.
+Graphics Settings and every Quality level reference the same URP asset.
+DemoBuilder.Prepare calls RenderingSetup.EnsureConfigured, then serializes
+both material references into the scene so builds retain their shaders.
+Keep all rendering assets and their .meta files together when pulling changes.
+The optional screenshot smoke check uses URP's SubmitRenderRequest API.
+In-app purchasing was unused: its deprecated package was removed rather than
+adding purchase functionality. Monetization remains undecided by Dominik.
+
+Windows builds: this Mac currently has only Mac and WebGL support installed.
+Add Windows Build Support (Mono) for Unity 6000.6.6f1 through Unity Hub, then
+select Windows x64 in Build Profiles and include Assets/Godlings/Scenes/Demo.unity.
+Distribute the whole build folder, not only its .exe. Test on an actual Windows PC.
+Windows IL2CPP builds require a Windows editor plus the native C++ toolchain.
+
+Migration verification: the Mac development build passed the opt-in input and
+full gameplay smoke check (including actual URP 2D renderer and shader checks).
+Its 1280x720 camera capture exactly matched the pre-URP capture (SHA-256
+eebf6e12fa4dd90dead4df880b29566a4e8976377cb8559abd2780c110310478).
+The original artwork and derived sprite hashes were verified unchanged.
+
+The WebGL build also passed. Browser verification confirmed rendering, movement,
+attacks, defeat/restart, and the motion panel with the saved defaults. The browser
+console contained no warnings or errors during that check. Both local Mac and
+WebGL outputs were replaced with the verified URP builds; old builds are retained
+locally in .work/before-urp-20261017. Reopen an already-running Unity editor after
+pulling the migration so its project graphics/package settings reload together.

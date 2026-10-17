@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &281579766
+--- !u!1 &801371595
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,8 +127,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 281579768}
-  - component: {fileID: 281579767}
+  - component: {fileID: 801371597}
+  - component: {fileID: 801371596}
   m_Layer: 0
   m_Name: Godlings demo
   m_TagString: Untagged
@@ -136,19 +136,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &281579767
+--- !u!114 &801371596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281579766}
+  m_GameObject: {fileID: 801371595}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3de9912bc38174ae8bb89bd29c643ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Godlings.DemoGame
   Rules: {fileID: 11400000, guid: b358c9bbba60c4e67bb634e4c67eb7f2, type: 2}
+  FlatMaterial: {fileID: 2100000, guid: 6936b53695dcd448099cb929be29b3e8, type: 2}
+  SpriteMaterial: {fileID: 2100000, guid: f6957c9f4d3d94843bd0b923c4c8961a, type: 2}
   LevelSketch: {fileID: 4900000, guid: 236b8e590eebc4ab788eb6cbfdc58444, type: 3}
   FiSprite: {fileID: 21300000, guid: 44d16e8a094e34a35b09fb1f33773ffd, type: 3}
   EnemySprites:
@@ -161,13 +163,13 @@ MonoBehaviour:
   FiHurtClip: {fileID: 0}
   MeteorSprite: {fileID: 21300000, guid: a514e214727c54d23a6b14118661b42f, type: 3}
   MeteorShadowSprite: {fileID: 21300000, guid: 399468db4917f4d7e900d4b87cc0733e, type: 3}
---- !u!4 &281579768
+--- !u!4 &801371597
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281579766}
+  m_GameObject: {fileID: 801371595}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -180,4 +182,4 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 281579768}
+  - {fileID: 801371597}

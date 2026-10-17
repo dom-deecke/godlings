@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 
 namespace Godlings
 {
@@ -14,6 +15,8 @@ namespace Godlings
     public sealed class DemoGame : MonoBehaviour
     {
         public DemoRules Rules;
+        // Serialized references retain both URP shaders in standalone and Web builds.
+        public Material FlatMaterial, SpriteMaterial;
         public TextAsset LevelSketch;
         public Sprite FiSprite;
         public Sprite[] EnemySprites;
@@ -89,7 +92,9 @@ namespace Godlings
             level = DemoLevel.Load(LevelSketch);
             board = new GridBoard(level.Floor);
             input = new DemoInput();
-            flatMaterial = new Material(Shader.Find("Sprites/Default"));
+            if (FlatMaterial == null || SpriteMaterial == null)
+                throw new System.InvalidOperationException("Prepare the demo to assign its URP materials.");
+            flatMaterial = new Material(FlatMaterial);
             foreach (Vector2Int cell in level.Floor)
                 Tile("Test tile", cell, new Color(187/255f,214/255f,171/255f), -1000, 0.96f);
 
@@ -100,6 +105,7 @@ namespace Godlings
             playerArt.transform.SetParent(playerObject.transform,false);
             playerArt.transform.localPosition = Rules.PlayerVisualOffset;
             playerSprite = playerArt.AddComponent<SpriteRenderer>();
+            playerSprite.sharedMaterial = SpriteMaterial;
             playerSprite.sprite = FiSprite;
             // Imported sprite has a foot pivot; the actor remains upright.
             playerArt.transform.localScale = Vector3.one * (1.2f / FiSprite.bounds.size.y);
@@ -119,6 +125,7 @@ namespace Godlings
                 visual.transform.SetParent(body.transform, false);
                 visual.transform.localPosition = Rules.EnemyVisualOffset;
                 var enemyView = visual.AddComponent<SpriteRenderer>();
+                enemyView.sharedMaterial = SpriteMaterial;
                 enemyView.sprite = EnemySprites[i % EnemySprites.Length];
                 visual.transform.localScale = Vector3.one * (0.95f / enemyView.sprite.bounds.size.y);
                 var enemyHealth = new Health(Rules.EnemyHealth);
@@ -130,6 +137,7 @@ namespace Godlings
             bossView = new GameObject("Boss (large supplied enemy)");
             bossView.transform.position = GridProjection.World(level.BossStart);
             var bossSprite = bossView.AddComponent<SpriteRenderer>();
+            bossSprite.sharedMaterial = SpriteMaterial;
             // The green entry is the supplied enemy's original body hue.
             bossSprite.sprite = EnemySprites[4];
             bossSprite.sortingOrder = Depth(bossView.transform.position);
@@ -144,6 +152,10 @@ namespace Godlings
 
             var cameraObject = new GameObject("Scrolling camera");
             viewCamera = cameraObject.AddComponent<Camera>();
+            var cameraData = viewCamera.GetUniversalAdditionalCameraData();
+            cameraData.SetRenderer(0);
+            cameraData.renderPostProcessing = false;
+            viewCamera.allowHDR = false;
             cameraObject.tag = "MainCamera";
             cameraObject.AddComponent<AudioListener>();
             meteorAudio = gameObject.AddComponent<MeteorAudio>();
@@ -453,6 +465,7 @@ namespace Godlings
             var art = new GameObject("Supplied artwork");
             art.transform.SetParent(root.transform,false);
             var view = art.AddComponent<SpriteRenderer>();
+            view.sharedMaterial = SpriteMaterial;
             view.sprite = sprite;
             view.sortingOrder = shadow ? -800 : Depth(root.transform.position);
             // Both exports share identical image bounds: the flattened shadow

@@ -1,3 +1,5 @@
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
 using System;
 using System.Collections;
@@ -37,6 +39,13 @@ namespace Godlings
             yield return null;
             var game = FindFirstObjectByType<DemoGame>();
             if (game == null || !game.Ready) { Fail("Game did not initialize."); yield break; }
+            // Check the actual player pipeline and retained shaders, not only editor settings.
+            if (!(GraphicsSettings.currentRenderPipeline is UniversalRenderPipelineAsset) ||
+                Camera.main.GetUniversalAdditionalCameraData().scriptableRenderer.GetType().Name != "Renderer2D" ||
+                game.FlatMaterial == null || game.SpriteMaterial == null ||
+                !game.FlatMaterial.shader.isSupported || !game.SpriteMaterial.shader.isSupported)
+            { Fail("URP 2D renderer or required unlit shaders are unavailable."); yield break; }
+            Debug.Log("GODLINGS_URP_RUNTIME_PASSED");
             if (game.PlayerCurrentHealth != 10 || game.BossCurrentHealth != 50)
             { Fail("Initial health does not match confirmed rules."); yield break; }
             Vector2Int initialEnemyCell = game.FirstEnemyCell;
@@ -89,7 +98,10 @@ namespace Godlings
                 var camera = Camera.main;
                 var target = new RenderTexture(1280,720,24);
                 camera.targetTexture = target;
-                camera.Render();
+                if (GraphicsSettings.currentRenderPipeline is UniversalRenderPipelineAsset)
+                    RenderPipeline.SubmitRenderRequest(camera,
+                        new UniversalRenderPipeline.SingleCameraRequest { destination = target });
+                else camera.Render();
                 RenderTexture.active = target;
                 var image = new Texture2D(1280,720,TextureFormat.RGB24,false);
                 image.ReadPixels(new Rect(0,0,1280,720),0,0);

@@ -22,3 +22,6 @@ outputs/
 *.VC.db
 .env
 .env.*
+
+# Generated performance-test machine/run metadata, never game assets.
+Assets/Resources/PerformanceTestRun*.json*

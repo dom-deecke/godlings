@@ -14,6 +14,7 @@ namespace Godlings.Editor
         [MenuItem("Godlings/Prepare playable demo")]
         public static void Prepare()
         {
+            RenderingSetup.EnsureConfigured();
             Directory.CreateDirectory("Assets/Godlings/Data");
             File.Copy("Design/Data/level-sketch.json","Assets/Godlings/Data/level-sketch.json",true);
             AssetDatabase.Refresh();
@@ -33,6 +34,8 @@ namespace Godlings.Editor
 
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             var game = new GameObject("Godlings demo").AddComponent<DemoGame>();
+            game.FlatMaterial = RenderingSetup.FlatMaterial;
+            game.SpriteMaterial = RenderingSetup.SpriteMaterial;
             game.Rules = AssetDatabase.LoadAssetAtPath<DemoRules>("Assets/Godlings/DemoRules.asset");
             game.LevelSketch = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Godlings/Data/level-sketch.json");
             // Leave this optional: the agreed placeholder is a synthetic fox yelp.
