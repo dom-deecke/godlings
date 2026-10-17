@@ -184,9 +184,10 @@ Tested Assets, Packages, ProjectSettings, scene, and metadata were copied back t
 so this project folder is coherent. Build caches are regenerable; do not copy Library,
 Temp, or stale metadata individually into a fresh clone. Prefer a non-iCloud folder
 for Dominik's clone. Old caches were preserved locally, not included in the repository.
-The installed GitHub integration has returned 403 Resource not accessible by integration
-on writes even though collaborator invitation was accepted. Browser GitHub sign-in has
-worked for asset uploads. Do not request passwords or tokens in chat; use normal sign-in.
+GitHub writes initially returned 403 because the needed account connection was missing.
+The connection was corrected on 17 October 2026 and normal repository writes verified.
+The complete source and artwork are now on main; the release ZIP remains a backup.
+Do not request passwords or tokens in chat; use normal sign-in.
 Do not force-push or overwrite unrelated repository content to work around access.
 
 NOT YET IMPLEMENTED / NEXT WORK WITH DOMINIK
