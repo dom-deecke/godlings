@@ -1,0 +1,20 @@
+APPROVED STORY AND THEMES
+The Godlings are the children of the god of the stars and a soldier who died while
+they were infants. Unprepared for mortality, their father became overwhelmed by
+grief, anger, and despair, abandoned his children, and could no longer uphold the
+celestial balance. Their grandmother, the goddess of the earth, secretly raised
+them in a forest hut, shielding them from their divine lineage and the intrigues
+and revolts among the other gods. Their father has long regretted abandoning them.
+One of eight moon goddesses visits the children and seeks their help in bringing
+him back to his divine duties. She is NOT an emissary of the other seven: those
+seven are involved in the intrigues surrounding the celestial imbalance.
+Divine power comes from belief. Initially no creatures believe in the children,
+so they have no divine power. Their experiences lead to acts that kindle initial
+faith among the world's creatures. That faith, the creatures' perceptions, and
+subsequent experiences shape their emerging divinity in a continuing cycle.
+Their acts are not necessarily explicit moral choices. Good and evil are not
+absolute categories here; consequences and perceptions shape what follows.
+The game's objective is to guide the children toward the beings of light they
+were destined to be and away from darker impulses, restoring celestial balance.
+Do not add lore or implement a morality system without Dominik's direction.
+The current demo implements combat only; faith and story progression are not built.

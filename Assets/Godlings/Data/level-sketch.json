@@ -1,0 +1,180 @@
+{
+  "source": "Art/Originals/WhatsApp Image 2026-10-17 at 13.27.18.jpeg",
+  "status": "Original sketch with user-requested 50-by-6 meteor run before the boss",
+  "widthTiles": 79,
+  "heightTiles": 6,
+  "coordinates": "Origin at lower left. x increases right; y increases toward the back of the angled floor. Text rows are shown top to bottom.",
+  "legend": {
+    "#": "walkable tile",
+    ".": "outside level",
+    "P": "Fi start",
+    "E": "regular enemy start",
+    "B": "boss start"
+  },
+  "rowsTopToBottom": [
+    "#############.......##################################################.........",
+    "#########E######E##############################################################",
+    "#################E#############################################################",
+    "#P#####E######################################################################B",
+    "#############.......###########################################################",
+    "#############.......###########################################################"
+  ],
+  "playerStart": [
+    1,
+    2
+  ],
+  "enemyStarts": [
+    [
+      7,
+      2
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      16,
+      4
+    ],
+    [
+      17,
+      3
+    ]
+  ],
+  "bossStart": [
+    78,
+    2
+  ],
+  "bossArena": {
+    "minimumCell": [
+      70,
+      0
+    ],
+    "maximumCellInclusive": [
+      78,
+      4
+    ],
+    "rockTargetsRestrictedToArena": false,
+    "legal3x3RockCenters": [
+      [
+        71,
+        1
+      ],
+      [
+        71,
+        2
+      ],
+      [
+        71,
+        3
+      ],
+      [
+        72,
+        1
+      ],
+      [
+        72,
+        2
+      ],
+      [
+        72,
+        3
+      ],
+      [
+        73,
+        1
+      ],
+      [
+        73,
+        2
+      ],
+      [
+        73,
+        3
+      ],
+      [
+        74,
+        1
+      ],
+      [
+        74,
+        2
+      ],
+      [
+        74,
+        3
+      ],
+      [
+        75,
+        1
+      ],
+      [
+        75,
+        2
+      ],
+      [
+        75,
+        3
+      ],
+      [
+        76,
+        1
+      ],
+      [
+        76,
+        2
+      ],
+      [
+        76,
+        3
+      ],
+      [
+        77,
+        1
+      ],
+      [
+        77,
+        2
+      ],
+      [
+        77,
+        3
+      ]
+    ]
+  },
+  "presentation": {
+    "camera": "Angled perspective, scrolling with player",
+    "tiles": "User-provided tiles at common size; final pixel dimensions pending",
+    "animations": "User-provided, pending",
+    "newArtworkPermitted": false
+  },
+  "transcriptionNotes": [
+    "Hand-drawn lines are uneven; squares are normalized to a common tile size.",
+    "The narrow strip at the far left is counted as a tile column.",
+    "Starting area is 13 columns by 6 rows; connecting passage is 7 columns by 3 rows; boss area is 9 columns by 5 rows.",
+    "Markers are assigned to the cells containing their centers.",
+    "User requested 50 additional columns by 6 rows of meteor hazards after the small enemies; boss area shifts 50 columns right.",
+    "Meteor warnings start when Fi approaches the second group, from column 12; target area begins at their spawn line, column 16."
+  ],
+  "meteorRun": {
+    "minimumCell": [
+      20,
+      0
+    ],
+    "maximumCellInclusive": [
+      69,
+      5
+    ]
+  },
+  "meteorApproach": {
+    "minimumCell": [
+      16,
+      0
+    ],
+    "maximumCellInclusive": [
+      19,
+      5
+    ]
+  },
+  "meteorActivationColumn": 12
+}

@@ -1,0 +1,69 @@
+GODLINGS PLAYABLE DEMO
+
+Browser review: http://127.0.0.1:8765/
+Click the game once to enable keyboard/audio input.
+Pause, annotate, and export notes using the browser header.
+
+Unity source: open this project in Unity 6000.6.6f1,
+open Assets/Godlings/Scenes/Demo.unity and press Play.
+Use Godlings > Prepare playable demo to regenerate the scene from source.
+Use Godlings > Run core checks for deterministic behavior checks.
+Desktop demo: Builds/Mac/Godlings Demo.app.
+
+Controls
+WASD / numeric keypad: eight-way grid movement with smooth slides.
+Arrows: cardinal sword attacks, independent of movement direction.
+Controller: left stick moves, right stick aims, right trigger attacks.
+F1: pause and rebind controls. F2: pause for annotation.
+Mouse input only operates menus. Rebindings are saved locally.
+
+Playtest rules
+Fi: 10 HP, 1.5 sword damage; three tiles ahead during a 0.12-second swing.
+The active sword area follows Fi continuously and damages each target once.
+After a damaging hit, Fi has ten gameplay frames of invincibility.
+Regular enemies: 3 HP, 2 contact damage, 0.45-second steps, sensing radius 4.
+On surviving a hit, an enemy recoils one legal tile over half a second;
+blocked recoil staggers in place. Enemies show health above their artwork.
+Boss: 50 HP, using an enlarged version of the supplied enemy drawing.
+Within two tiles on the same row/column, it warns in red for two seconds,
+then swipes a six-wide, two-deep rectangle for 4 damage. Cooldown: 5 seconds.
+
+Meteor run
+The original enemy section leads into a new 50-by-6-tile run, then the boss.
+Meteors begin warning as Fi approaches the second enemy group.
+Targets start at that group's spawn line and are chosen within the visible
+area around Fi. Later warnings are separated by random 2–2.43-second waits.
+A growing, rock-shaped shadow warns for 1.5 seconds before impact.
+Drops randomly use 1-by-1, 2-by-2, or 3-by-3 tiles. The artwork,
+shadow, hitbox, and crater obstruction all match that size.
+Impact deals 3 damage to Fi. Craters block movement for two seconds.
+Meteor footprints exclude live enemies (including reserved step targets)
+and the boss. A drop is cancelled if an enemy enters its warned footprint.
+Smaller meteors make quieter, higher sounds with shorter impact tails.
+
+Motion panel
+Tune Fi/enemy step duration, hold delay, attack cooldown, sensing range,
+minimum/maximum meteor interval, and Fi/enemy horizontal/vertical offsets.
+Changes are live for the current run; Restart restores the starting rules.
+Offsets move artwork without changing grid occupancy or collision rules.
+Disable EnableMotionPanel in Assets/Godlings/DemoRules.asset for production.
+
+Artwork and audio
+Fi and enemy sprites use supplied artwork; no generative artwork was made.
+Meteor/crater use Untitled_Artwork 7.png. Only the bottom soil contact rim
+blends toward pale green (#BBD6AB); raised soil and rock keep their colors.
+The shadow is traced from the visible rock silhouette, excluding the soil.
+The original drawing is preserved unchanged in Art/Originals.
+Fi uses a temporary synthetic fox yelp, regular enemies short burps,
+and the boss a louder, deeper, 1.4-second burp. Meteors whoosh and impact.
+Final animations, scenery tiles and title screen remain artist-provided.
+Faith mechanics and additional story content have not been invented.
+
+Files
+Design/Data/level-sketch.json: editable level layout and hazard regions.
+Design/Data/demo-specification.json: confirmed behavior and parameters.
+Assets/Godlings/DemoRules.asset: editable playtest values.
+PLAYTEST-NOTES.txt: latest detailed changes.
+
+Saved panel defaults from Dominik: Fi offsets -0.15 / -0.05; enemy offsets
++0.04 / -0.17. Meteor max 2.43s, min 2s. Other timings unchanged.

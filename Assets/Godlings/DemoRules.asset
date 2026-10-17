@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77acbf79ba52b43c595abc8c06ac095a, type: 3}
+  m_Name: DemoRules
+  m_EditorClassIdentifier: Assembly-CSharp::Godlings.DemoRules
+  PlayerHealth: 10
+  EnemyHealth: 3
+  EnemyDamage: 2
+  RockDamage: 3
+  RockIntervalSeconds: 2.43
+  SwordDamage: 1.5
+  BossHealth: 50
+  RockWarningSeconds: 1.5
+  StepSeconds: 0.1
+  HoldDelaySeconds: 0.18
+  AttackCooldownSeconds: 0.4
+  ShowRestartOnDefeat: 1
+  EnemyStepSeconds: 0.45
+  EnemySenseRadiusTiles: 4
+  EnableMotionPanel: 1
+  EnemyVisualOffset: {x: 0.04, y: -0.17}
+  CraterSeconds: 2
+  RockMinimumIntervalSeconds: 2
+  BossSwipeDamage: 4
+  BossSwipeWarningSeconds: 2
+  BossSwipeCooldownSeconds: 5
+  PlayerVisualOffset: {x: -0.15, y: -0.05}
+  PlayerInvincibilityFrames: 10
+  EnemyRecoilSeconds: 0.5

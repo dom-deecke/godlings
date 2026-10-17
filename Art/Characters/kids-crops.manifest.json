@@ -1,0 +1,343 @@
+{
+  "source": "Art/Originals/Kids.png",
+  "sourceSha256": "e67d16a3583a23e7d6382623209815f1c9b6bcf27b3c1a9c32b6d9fb87709ce2",
+  "notes": [
+    "Names follow Dominik confirmation.",
+    "View names describe the supplied drawings, not new animation frames.",
+    "Exported character pixels retain original resolution and colors.",
+    "Detached handwriting and label fragments at crop edges are excluded.",
+    "No gameplay-facing direction or animation behavior is inferred."
+  ],
+  "assets": [
+    {
+      "character": "fi",
+      "view": "large-side",
+      "file": "Art/Characters/fi/fi-large-side.png",
+      "sourceRectangle": [
+        20,
+        45,
+        440,
+        650
+      ],
+      "trimWithinRectangle": [
+        27,
+        31,
+        399,
+        603
+      ],
+      "size": [
+        372,
+        572
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "fi",
+      "view": "small-angled",
+      "file": "Art/Characters/fi/fi-small-angled.png",
+      "sourceRectangle": [
+        130,
+        815,
+        345,
+        1125
+      ],
+      "trimWithinRectangle": [
+        18,
+        3,
+        192,
+        301
+      ],
+      "size": [
+        174,
+        298
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "fi",
+      "view": "small-front",
+      "file": "Art/Characters/fi/fi-small-front.png",
+      "sourceRectangle": [
+        145,
+        1140,
+        335,
+        1465
+      ],
+      "trimWithinRectangle": [
+        22,
+        20,
+        171,
+        315
+      ],
+      "size": [
+        149,
+        295
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "arci",
+      "view": "large-side",
+      "file": "Art/Characters/arci/arci-large-side.png",
+      "sourceRectangle": [
+        545,
+        45,
+        915,
+        650
+      ],
+      "trimWithinRectangle": [
+        26,
+        15,
+        356,
+        600
+      ],
+      "size": [
+        330,
+        585
+      ],
+      "removedDetachedAnnotationPixels": 249
+    },
+    {
+      "character": "arci",
+      "view": "small-angled",
+      "file": "Art/Characters/arci/arci-small-angled.png",
+      "sourceRectangle": [
+        645,
+        815,
+        865,
+        1120
+      ],
+      "trimWithinRectangle": [
+        23,
+        0,
+        202,
+        295
+      ],
+      "size": [
+        179,
+        295
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "arci",
+      "view": "small-front",
+      "file": "Art/Characters/arci/arci-small-front.png",
+      "sourceRectangle": [
+        660,
+        1135,
+        855,
+        1460
+      ],
+      "trimWithinRectangle": [
+        17,
+        6,
+        182,
+        308
+      ],
+      "size": [
+        165,
+        302
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "yrrh",
+      "view": "large-side",
+      "file": "Art/Characters/yrrh/yrrh-large-side.png",
+      "sourceRectangle": [
+        1050,
+        90,
+        1505,
+        655
+      ],
+      "trimWithinRectangle": [
+        24,
+        34,
+        436,
+        558
+      ],
+      "size": [
+        412,
+        524
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "yrrh",
+      "view": "small-angled",
+      "file": "Art/Characters/yrrh/yrrh-small-angled.png",
+      "sourceRectangle": [
+        1175,
+        850,
+        1385,
+        1120
+      ],
+      "trimWithinRectangle": [
+        18,
+        3,
+        193,
+        260
+      ],
+      "size": [
+        175,
+        257
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "yrrh",
+      "view": "small-front",
+      "file": "Art/Characters/yrrh/yrrh-small-front.png",
+      "sourceRectangle": [
+        1180,
+        1160,
+        1370,
+        1460
+      ],
+      "trimWithinRectangle": [
+        26,
+        10,
+        174,
+        282
+      ],
+      "size": [
+        148,
+        272
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "min",
+      "view": "large-side",
+      "file": "Art/Characters/min/min-large-side.png",
+      "sourceRectangle": [
+        1600,
+        80,
+        2050,
+        655
+      ],
+      "trimWithinRectangle": [
+        28,
+        30,
+        370,
+        568
+      ],
+      "size": [
+        342,
+        538
+      ],
+      "removedDetachedAnnotationPixels": 2598
+    },
+    {
+      "character": "min",
+      "view": "small-angled",
+      "file": "Art/Characters/min/min-small-angled.png",
+      "sourceRectangle": [
+        1690,
+        830,
+        1885,
+        1120
+      ],
+      "trimWithinRectangle": [
+        17,
+        0,
+        179,
+        276
+      ],
+      "size": [
+        162,
+        276
+      ],
+      "removedDetachedAnnotationPixels": 271
+    },
+    {
+      "character": "min",
+      "view": "small-front",
+      "file": "Art/Characters/min/min-small-front.png",
+      "sourceRectangle": [
+        1695,
+        1135,
+        1880,
+        1465
+      ],
+      "trimWithinRectangle": [
+        19,
+        9,
+        167,
+        309
+      ],
+      "size": [
+        148,
+        300
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "lau",
+      "view": "large-side",
+      "file": "Art/Characters/lau/lau-large-side.png",
+      "sourceRectangle": [
+        2100,
+        90,
+        2560,
+        655
+      ],
+      "trimWithinRectangle": [
+        21,
+        26,
+        448,
+        562
+      ],
+      "size": [
+        427,
+        536
+      ],
+      "removedDetachedAnnotationPixels": 0
+    },
+    {
+      "character": "lau",
+      "view": "small-angled",
+      "file": "Art/Characters/lau/lau-small-angled.png",
+      "sourceRectangle": [
+        2200,
+        835,
+        2445,
+        1120
+      ],
+      "trimWithinRectangle": [
+        28,
+        8,
+        227,
+        279
+      ],
+      "size": [
+        199,
+        271
+      ],
+      "removedDetachedAnnotationPixels": 92
+    },
+    {
+      "character": "lau",
+      "view": "small-front",
+      "file": "Art/Characters/lau/lau-small-front.png",
+      "sourceRectangle": [
+        2220,
+        1160,
+        2410,
+        1460
+      ],
+      "trimWithinRectangle": [
+        26,
+        12,
+        174,
+        281
+      ],
+      "size": [
+        148,
+        269
+      ],
+      "removedDetachedAnnotationPixels": 0
+    }
+  ]
+}

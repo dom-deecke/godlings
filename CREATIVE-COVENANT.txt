@@ -1,0 +1,9 @@
+CREATIVE OWNERSHIP AND WORKING RULES
+Dominik owns all creative concepts, characters, story, visual design, and choices.
+He is ideologically opposed to AI art and cautious about AI coding. Do not generate
+art, redraw his work, invent animations, expand the story, invent names, or make
+creative decisions without asking him. Implement readable, well-commented C#.
+Deterministic cropping, transparent extraction, palette hue variants, flipping Fi,
+scaling the supplied enemy into the demo boss, and deriving a meteor silhouette
+were expressly approved. Preserve originals. These approvals do not authorize new
+visual invention. Interview Dominik when a decision affects his content.

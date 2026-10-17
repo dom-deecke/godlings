@@ -1,0 +1,165 @@
+{
+  "originals": [
+    {
+      "path": "Art/Originals/Kids.png",
+      "sha256": "e67d16a3583a23e7d6382623209815f1c9b6bcf27b3c1a9c32b6d9fb87709ce2",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/PHOTO-2026-04-05-14-53-18.png",
+      "sha256": "bb3a39dc8ed5feecf80b205938a4396a12dc6a27b23390c62ea8ad2e95a9bdb6",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/Untitled_Artwork 1.png",
+      "sha256": "8cc19cd837c2b8676d9b36f7dbbf582d045159abd2518ec80f45fe4195c4410f",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/Untitled_Artwork 2.png",
+      "sha256": "5eeabb01430c52570d0c14c503e33621cba2c73df9e6888ebb1f9335ff42877a",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/Untitled_Artwork 3.png",
+      "sha256": "e0b3fa307180714493b1c1966fb0834fcdc53dc5ea8a34abae847dd2bbc76aad",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/Untitled_Artwork 4.png",
+      "sha256": "c6c6e3007cdd48710304a22955f45f350ae9788f403a70c15a48efa4fd133183",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/Untitled_Artwork 5.png",
+      "sha256": "025ff3b81cee15de0c3acba6644910802663276e9e65c420ae8148c079e66538",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/Untitled_Artwork 7.png",
+      "sha256": "3f699590b5d21f6cf97c3614ffa41c00acd4b64788e45eb46d0b3fcc21855f47",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/Untitled_Artwork.png",
+      "sha256": "74742435709b752b0daa55c46b37c172633503632513de933e9db6509db47a12",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/WhatsApp Image 2026-10-17 at 11.53.23.jpeg",
+      "sha256": "df60821658a6f8736b091831b3fe57449e48426b3ea6bc7f8282217dba8b666a",
+      "matchesSuppliedDownload": true
+    },
+    {
+      "path": "Art/Originals/WhatsApp Image 2026-10-17 at 13.27.18.jpeg",
+      "sha256": "aa3f475cc7d05e8bd586dac282ee2d4c25c88782826ed1460b44277a625008a4",
+      "matchesSuppliedDownload": true
+    }
+  ],
+  "derived": [
+    {
+      "path": "Art/Characters/arci/arci-large-side.png",
+      "sha256": "00982c5396883f72fba050729ae080e9eab50ca1ddabbb83740b696397cd54ea"
+    },
+    {
+      "path": "Art/Characters/arci/arci-small-angled.png",
+      "sha256": "fdf006b0bbdfd8f511982d883b25eae86206a7c258bb4de941e201ab17ed5adc"
+    },
+    {
+      "path": "Art/Characters/arci/arci-small-front.png",
+      "sha256": "4489f0b5a56110c396952f376aaff131d9d2049822edecd47d55267d432ff788"
+    },
+    {
+      "path": "Art/Characters/fi/fi-large-side.png",
+      "sha256": "0b0ee0352693ced2ff61a2e49e4eedb7ea1b00fb71dbe7a0783baf28995fbd43"
+    },
+    {
+      "path": "Art/Characters/fi/fi-small-angled.png",
+      "sha256": "f5decb23ec52cbca6b0d056a6c088ab4d1b94099591a5cc23d46576015c77592"
+    },
+    {
+      "path": "Art/Characters/fi/fi-small-front.png",
+      "sha256": "12a431f1184ac538043f99ac2874b41c19876c29694b8e635cc846af50e081ff"
+    },
+    {
+      "path": "Art/Characters/lau/lau-large-side.png",
+      "sha256": "5646d26f514bff07b18b8af7c8b7d9d443a9cb42f7345912d5cfe9a7173c564c"
+    },
+    {
+      "path": "Art/Characters/lau/lau-small-angled.png",
+      "sha256": "12d41e9bdc97ac76c93ae45f2733819f0c6b37a1692007e4d1f83ae9f95bee26"
+    },
+    {
+      "path": "Art/Characters/lau/lau-small-front.png",
+      "sha256": "05e4a55733e9c29e95fba58503ee1f09481f3de0debc914acfc16b73e42761e4"
+    },
+    {
+      "path": "Art/Characters/min/min-large-side.png",
+      "sha256": "21fe8446807abc9a9bdd93645580ad5e2e5ef7b1d0b7b91d935c806f225981af"
+    },
+    {
+      "path": "Art/Characters/min/min-small-angled.png",
+      "sha256": "e044f838ef905ca54400284bb48cc37700ed8819906abba014796f24512d22af"
+    },
+    {
+      "path": "Art/Characters/min/min-small-front.png",
+      "sha256": "1f728165bab3934a7adac7ab676b33aba6e20d582250a668965550d0982c7251"
+    },
+    {
+      "path": "Art/Characters/yrrh/yrrh-large-side.png",
+      "sha256": "85c82521298d07e59693eeef75b70497da56867c011712ca72eed902500566af"
+    },
+    {
+      "path": "Art/Characters/yrrh/yrrh-small-angled.png",
+      "sha256": "c56917178d0b2360178d2a7de04b15a26b7101d5149dc1b73201e6b0055a4c86"
+    },
+    {
+      "path": "Art/Characters/yrrh/yrrh-small-front.png",
+      "sha256": "59951eb2bb1822d456ed97dfca7a6ca0ff1a78e99e388043ef4997d34b4b77b9"
+    },
+    {
+      "path": "Assets/Godlings/Art/Enemies/enemy-blue.png",
+      "sha256": "de6db55c6a3bf7716187f3277219c3421f31ed16665eea36521e27e726b70a63"
+    },
+    {
+      "path": "Assets/Godlings/Art/Enemies/enemy-green.png",
+      "sha256": "f56fb78a90eb881b01eb74a9dd1bcd199951ce3229045f9ef440bb9f5a5cd88c"
+    },
+    {
+      "path": "Assets/Godlings/Art/Enemies/enemy-orange.png",
+      "sha256": "48a0843a3272dda2f03a6de8ad9fa6bed512a83213c61a7f015da8d1997ba80e"
+    },
+    {
+      "path": "Assets/Godlings/Art/Enemies/enemy-pink.png",
+      "sha256": "ec475a5824ffee778e1be8f0d0d7543db8474b2156ce11cf8320451677e014b2"
+    },
+    {
+      "path": "Assets/Godlings/Art/Enemies/enemy-purple.png",
+      "sha256": "4b2633410a63c68bf3575ba26d4bcf29eec7a0a31d93bee4b0fc4cb4c10d9aaf"
+    },
+    {
+      "path": "Assets/Godlings/Art/Enemies/enemy-yellow.png",
+      "sha256": "99aa17007d02590884bc58b4473efefb94ce1b7006508e866da0854a697d8cd2"
+    },
+    {
+      "path": "Assets/Godlings/Art/Fi/fi-large-side.png",
+      "sha256": "0b0ee0352693ced2ff61a2e49e4eedb7ea1b00fb71dbe7a0783baf28995fbd43"
+    },
+    {
+      "path": "Assets/Godlings/Art/Fi/fi-small-angled.png",
+      "sha256": "f5decb23ec52cbca6b0d056a6c088ab4d1b94099591a5cc23d46576015c77592"
+    },
+    {
+      "path": "Assets/Godlings/Art/Fi/fi-small-front.png",
+      "sha256": "12a431f1184ac538043f99ac2874b41c19876c29694b8e635cc846af50e081ff"
+    },
+    {
+      "path": "Assets/Godlings/Art/Meteors/meteor-shadow.png",
+      "sha256": "67fe11d48b0da481db4390b8961ae7f5278e4cf4f7ccd7c022d248cf69264ae4"
+    },
+    {
+      "path": "Assets/Godlings/Art/Meteors/meteor-with-crater.png",
+      "sha256": "42502dc5cb3a3b97cf169f71244c3cb1ba3570eaeb5fb1c9155b87076ecaf364"
+    }
+  ]
+}

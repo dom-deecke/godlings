@@ -1,0 +1,119 @@
+{
+  "status": "Playable conceptual demo implemented with supplied Fi artwork and plain test geometry",
+  "engine": "Unity 6000.6.6f1",
+  "playableCharacter": "Fi",
+  "playerHealth": 10,
+  "enemyHealth": 3,
+  "enemyContactDamage": 2,
+  "allAttacksDealDamage": true,
+  "boss": {
+    "rockFootprintCells": [
+      3,
+      3
+    ],
+    "intervalSeconds": {
+      "minimum": 2,
+      "maximum": 10
+    },
+    "damage": 3,
+    "targetSelection": "Random locations",
+    "warningColor": "Growing shadow replaces red tiles",
+    "warningDurationSeconds": 1.5,
+    "health": 50,
+    "rocksPerInterval": 1,
+    "targetRegion": "Boss arena only",
+    "appearance": "Supplied green enemy artwork at twice regular enemy visual size",
+    "audio": "Synthesized falling whistle/whoosh during warning, impact at landing",
+    "craterDurationSeconds": 2,
+    "craterBlocksMovement": true,
+    "swipe": {
+      "damage": 4,
+      "cooldownSeconds": 5,
+      "warningSeconds": 2,
+      "widthTiles": 6,
+      "lengthTiles": 2,
+      "trigger": "Fi within two cells on same row or column",
+      "direction": "Toward Fi, footprint fixed when warning begins",
+      "warningColor": "Red"
+    },
+    "meteorArtwork": "Art/Originals/Untitled_Artwork 7.png",
+    "shadow": "Traced rock silhouette, flattened onto floor; grows to proportional rock width",
+    "meteorsExcludeBossTile": true
+  },
+  "bossDefeatCompletesDemo": true,
+  "playerSwordDamage": 1.5,
+  "levelLayout": "Design/Data/level-sketch.json",
+  "notes": [
+    "Enemy artwork is a regular enemy, not the boss.",
+    "No faith mechanics or additional story content have been invented.",
+    "Enemies stop initiating pursuit steps outside the approved 4-tile straight-line radius; contact cadence remains 0.4 seconds."
+  ],
+  "movement": {
+    "stepSeconds": 0.1,
+    "holdDelaySeconds": 0.18
+  },
+  "attackCooldownSeconds": 0.4,
+  "showRestartOnDefeat": true,
+  "fiMayFlipHorizontally": true,
+  "enemyStepSeconds": 0.45,
+  "enemySenseRadiusTiles": 4,
+  "showEnemyHealth": true,
+  "enemyArtworkVariants": "Art/Palettes/enemy-variants.reference.json",
+  "browserReviewUrl": "http://127.0.0.1:8765/",
+  "playerSwordReachTiles": 3,
+  "floorColor": "#BBD6AB",
+  "temporaryMotionPanel": "Includes Fi and enemy artwork offsets, motion, attack timing, sensing, meteor interval range",
+  "hurtAudio": {
+    "Fi": "Short synthetic young fox yelp; no spoken words",
+    "enemies": "Short synthesized burp",
+    "boss": "Louder, deeper, 1.4-second synthesized burp; dedicated non-overlapping voice"
+  },
+  "meteorRun": {
+    "sizeTiles": [
+      50,
+      6
+    ],
+    "targets": "Random fully visible footprints around Fi",
+    "timingPanel": "Minimum and maximum intervals, constrained to 2\u201310 seconds",
+    "activation": "Fi approaches the second group at column 12; first warning starts immediately, later waits randomized 2\u201310 seconds",
+    "targetsBeginAtColumn": 16
+  },
+  "playerInvincibilityGameplayFrames": 10,
+  "enemyRecoil": {
+    "durationSeconds": 0.5,
+    "distanceTiles": 1,
+    "blockedDestination": "Stagger in place",
+    "appliesTo": "Regular enemies"
+  },
+  "swordActiveSeconds": 0.12,
+  "swordHurtbox": "Follows Fi continuously during swing, each target damaged once per swing",
+  "meteorSizeUpdate": {
+    "sizesTiles": [
+      1,
+      2,
+      3
+    ],
+    "visualAndHitboxMatch": true,
+    "excludeLiveEnemiesAndBoss": true,
+    "cancelIfEnemyEntersWarning": true,
+    "smallerSounds": "quieter, higher, shorter impact",
+    "damageAllSizes": 3
+  },
+  "savedMotionPanelDefaults": {
+    "FiStepSeconds": 0.1,
+    "enemyStepSeconds": 0.45,
+    "holdDelaySeconds": 0.18,
+    "attackCooldownSeconds": 0.4,
+    "enemySenseTiles": 4,
+    "meteorMinimumSeconds": 2,
+    "meteorMaximumSeconds": 2.43,
+    "FiVisualOffset": [
+      -0.15,
+      -0.05
+    ],
+    "enemyVisualOffset": [
+      0.04,
+      -0.17
+    ]
+  }
+}

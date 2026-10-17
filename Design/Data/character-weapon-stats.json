@@ -1,0 +1,154 @@
+{
+  "source": "Art/Originals/WhatsApp Image 2026-10-17 at 11.53.23.jpeg",
+  "status": "Latest table confirmed by Dominik as the reference for names and stats; gameplay unit conversions remain unspecified",
+  "characters": [
+    {
+      "sourceColumn": 1,
+      "name": "Fi",
+      "secondRowLabel": "Anubis",
+      "baseStats": {
+        "strength": 5,
+        "magic": 4,
+        "speed": 6,
+        "defense": 5,
+        "mana": 5
+      },
+      "weaponInSameTableColumn": "swords"
+    },
+    {
+      "sourceColumn": 2,
+      "name": "Arci",
+      "secondRowLabel": "Bastet",
+      "baseStats": {
+        "strength": 4,
+        "magic": 5,
+        "speed": 6,
+        "defense": 5,
+        "mana": 5
+      },
+      "weaponInSameTableColumn": "whips"
+    },
+    {
+      "sourceColumn": 3,
+      "name": "yrrh",
+      "secondRowLabel": "Horus",
+      "baseStats": {
+        "strength": 5,
+        "magic": 6,
+        "speed": 4,
+        "defense": 5,
+        "mana": 5
+      },
+      "weaponInSameTableColumn": "slingshots"
+    },
+    {
+      "sourceColumn": 4,
+      "name": "Min",
+      "secondRowLabel": "Khnum",
+      "baseStats": {
+        "strength": 4,
+        "magic": 6,
+        "speed": 5,
+        "defense": 4,
+        "mana": 6
+      },
+      "weaponInSameTableColumn": "staff"
+    },
+    {
+      "sourceColumn": 5,
+      "name": "Lau",
+      "secondRowLabel": "Sobek",
+      "baseStats": {
+        "strength": 6,
+        "magic": 4,
+        "speed": 5,
+        "defense": 6,
+        "mana": 4
+      },
+      "weaponInSameTableColumn": "hammer"
+    },
+    {
+      "sourceColumn": 6,
+      "name": "Pom",
+      "secondRowLabel": "Set",
+      "baseStats": {
+        "strength": 4,
+        "magic": 4,
+        "speed": 4,
+        "defense": 4,
+        "mana": 9
+      },
+      "weaponInSameTableColumn": "boomerang"
+    }
+  ],
+  "weapons": [
+    {
+      "sourceColumn": 1,
+      "name": "swords",
+      "attack": 5,
+      "range": 5,
+      "speed": 5,
+      "special": null
+    },
+    {
+      "sourceColumn": 2,
+      "name": "whips",
+      "attack": 4,
+      "range": 6,
+      "speed": 5,
+      "special": null
+    },
+    {
+      "sourceColumn": 3,
+      "name": "slingshots",
+      "attack": 3,
+      "range": 8,
+      "speed": 4,
+      "special": null
+    },
+    {
+      "sourceColumn": 4,
+      "name": "staff",
+      "attack": 6,
+      "range": 6,
+      "speed": 3,
+      "special": null
+    },
+    {
+      "sourceColumn": 5,
+      "name": "hammer",
+      "attack": 8,
+      "range": 6,
+      "speed": 1,
+      "special": null
+    },
+    {
+      "sourceColumn": 6,
+      "name": "boomerang",
+      "attack": 5,
+      "range": 7,
+      "speed": 3,
+      "special": null
+    }
+  ],
+  "sourceBottomRow": {
+    "label": null,
+    "values": [
+      40,
+      40,
+      40,
+      40,
+      40,
+      40
+    ]
+  },
+  "notes": [
+    "Source spelling strenght is retained in the workbook; strength is the JSON field name.",
+    "Blank special cells remain null.",
+    "Each bottom value equals the five base stats plus three weapon stats in that column; workbook totals use formulas.",
+    "Character-to-weapon column associations follow the latest table as directed by Dominik; weapon exclusivity is unspecified."
+  ],
+  "confirmationNeeded": [
+    "How weapon range and speed stats convert to grid distance and action timing."
+  ]
+}

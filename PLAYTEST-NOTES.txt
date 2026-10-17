@@ -1,0 +1,42 @@
+LATEST PLAYTEST CHANGES
+
+Rock warning: growing shadow over 3 x 3 tiles, replacing the red warning.
+Warning lasts 1.5 seconds; meteor intervals chosen randomly between 2 and 10 seconds in the boss arena.
+Impact damage remains 3. Crater tiles block Fi and enemies for 2 seconds.
+Enemies use the same traversal rules and route around blocked tiles.
+The floor remains intact and reopens when the crater expires.
+Meteor and crater now use the supplied Untitled_Artwork 7.png.
+The shadow is traced from its rock outline, excludes the soil, and grows
+to the same horizontal proportion as the visible rock.
+
+Fi makes a short synthetic young fox yelp when damaged.
+Regular enemies burp when damaged. The boss has a louder, much lower,
+1.4-second burp on its own audio source (temporary synthesis).
+All temporary audio can be replaced with supplied recordings.
+
+Boss swipe: Fi within two tiles on the same row or column triggers a swipe.
+It faces Fi: six tiles across and two rows forward, 2-second red warning,
+4 damage, five seconds between swipe starts. The warned footprint stays fixed
+while Fi evades. Meteor and swipe timers run independently and pause together.
+
+Meteor run: 50 columns by 6 rows inserted after the small enemies.
+Meteor targets are chosen among fully visible legal footprints around Fi.
+Motion panel now includes meteor minimum/maximum interval and Fi X/Y offsets.
+Scroll within the panel to reach all parameters. Offsets only move artwork.
+
+Fi has ten gameplay frames of invincibility after any damaging hit.
+Her three-tile sword hurtbox follows her continuously during each swing.
+Each target takes damage at most once per swing.
+Surviving regular enemies recoil one legal tile over half a second.
+Blocked recoil staggers in place rather than passing through walls or actors.
+Only the artwork's bottom soil rim blends into pale green; upper soil stays brown.
+
+Meteor target footprints exclude the boss's tile; meteors cannot damage him.
+
+Meteors warn immediately as Fi approaches the second enemy group.
+Targets begin at that group's starting line and continue through the meteor run.
+Later warnings keep their randomized 2–10-second intervals.
+
+Meteor size update: drops choose 1x1, 2x2, or 3x3. Artwork, growing silhouette, damage cells, and two-second crater use the selected size. Smaller drops have quieter, higher sounds and shorter impact tails. Targeting excludes live enemy origin/reserved destination cells and the boss. If an enemy enters a warned footprint, that drop is cancelled at impact; warned cells never relocate. No safe visible target means that drop is skipped. Damage remains 3 for all sizes.
+
+Latest panel screenshot saved as defaults: Fi step .10, enemy .45, hold .18, attack .40, sensing 4, meteors 2..2.43 seconds, Fi offset (-.15,-.05), enemy offset (.04,-.17). Both class defaults and serialized rules asset match.

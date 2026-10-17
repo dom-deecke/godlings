@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Godlings demo review</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui,sans-serif; background:#202020; color:#eee; }
+    body { margin:0; }
+    header { display:flex; flex-wrap:wrap; align-items:center; gap:10px; padding:12px; }
+    header strong { margin-right:auto; }
+    button,input,textarea { font:inherit; }
+    button { padding:7px 12px; color:#eee; background:#383838; border:1px solid #777; border-radius:4px; }
+    button:disabled { opacity:.5; }
+    button[aria-pressed="true"] { background:#eee; color:#181818; }
+    #stage { position:relative; width:100%; aspect-ratio:16/9; background:#191919; }
+    canvas { width:100%; height:100%; display:block; outline:none; }
+    #pins { position:absolute; inset:0; pointer-events:none; }
+    #pins.annotating { pointer-events:auto; cursor:crosshair; }
+    .pin { position:absolute; transform:translate(-50%,-50%); min-width:28px; padding:2px; border:2px solid white; border-radius:50%; background:#151515; color:white; pointer-events:auto; }
+    #status { padding:8px 12px; margin:0; color:#ccc; }
+    #notes { padding:0 12px 18px; }
+    #editor { margin:10px 0; display:flex; flex-wrap:wrap; gap:8px; }
+    #editor[hidden] { display:none; }
+    textarea { box-sizing:border-box; width:100%; min-height:72px; background:#292929; color:#eee; border:1px solid #888; padding:8px; }
+    li { margin-bottom:8px; overflow-wrap:anywhere; }
+    #error { color:#ffb0b0; padding:12px; white-space:pre-wrap; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Godlings · demo review</strong>
+    <button id="pause" disabled>Pause</button>
+    <button id="annotate" aria-pressed="false" disabled>Annotate</button>
+    <button id="export">Export notes</button>
+  </header>
+  <main>
+    <div id="stage">
+      <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Playable Godlings demo"></canvas>
+      <div id="pins" aria-label="Review annotation pins"></div>
+    </div>
+    <p id="status" role="status">Loading game…</p>
+    <div id="error" role="alert" hidden></div>
+    <section id="notes" aria-label="Review notes">
+      <form id="editor" hidden>
+        <label for="note">Note for selected position</label>
+        <textarea id="note" required maxlength="2000"></textarea>
+        <button type="submit">Save note</button>
+        <button id="cancel" type="button">Cancel</button>
+      </form>
+      <ol id="list"></ol>
+    </section>
+  </main>
+  <script src="Build/Web.loader.js"></script>
+  <script>
+    const canvas=document.getElementById('game'),pins=document.getElementById('pins');
+    const pause=document.getElementById('pause'),annotate=document.getElementById('annotate');
+    const status=document.getElementById('status'),form=document.getElementById('editor'),field=document.getElementById('note');
+    const storageKey='godlings-review-notes-v1';
+    let notes=[];
+    try { const value=JSON.parse(localStorage.getItem(storageKey)||'[]'); if(Array.isArray(value)) notes=value.filter(n=>Number.isFinite(n.x)&&Number.isFinite(n.y)&&typeof n.text==='string'); } catch {}
+    let instance=null,paused=false,annotating=false,selected=null;
+    function setPaused(value) {
+      paused=value;
+      if(instance) instance.SendMessage('Godlings demo','SetAnnotationPause',value?'1':'0');
+      pause.textContent=paused?'Resume':'Pause';
+    }
+    function paintNotes() {
+      pins.replaceChildren();
+      const list=document.getElementById('list');list.replaceChildren();
+      notes.forEach((n,i)=>{
+        const pin=document.createElement('button');pin.type='button';pin.className='pin';pin.textContent=i+1;
+        pin.style.left=(n.x*100)+'%';pin.style.top=(n.y*100)+'%';pin.setAttribute('aria-label','Edit note '+(i+1));
+        pin.addEventListener('click',event=>{event.stopPropagation();setPaused(true);selected={...n,index:i};field.value=n.text;form.hidden=false;field.focus();});
+        pins.append(pin);
+        const li=document.createElement('li');
+        const text=document.createElement('span');text.textContent=n.text+' ';li.append(text);
+        const remove=document.createElement('button');remove.type='button';remove.textContent='Delete';remove.setAttribute('aria-label','Delete note '+(i+1));
+        remove.addEventListener('click',()=>{notes.splice(i,1);localStorage.setItem(storageKey,JSON.stringify(notes));form.hidden=true;selected=null;paintNotes();});
+        li.append(remove);list.append(li);
+      });
+    }
+    pause.addEventListener('click',()=>{
+      setPaused(!paused);
+      if(!paused){annotating=false;annotate.setAttribute('aria-pressed','false');pins.classList.remove('annotating');form.hidden=true;canvas.focus();}
+    });
+    annotate.addEventListener('click',()=>{
+      annotating=!annotating;annotate.setAttribute('aria-pressed',String(annotating));pins.classList.toggle('annotating',annotating);
+      if(annotating){setPaused(true);status.textContent='Game paused. Click a position to add a note. Notes stay in this browser.';}
+      else {status.textContent='Click the game to play. WASD/keypad moves; arrows attack. Resume when ready.';}
+    });
+    pins.addEventListener('click',event=>{
+      if(!annotating)return;
+      const bounds=pins.getBoundingClientRect();selected={x:(event.clientX-bounds.left)/bounds.width,y:(event.clientY-bounds.top)/bounds.height};
+      field.value='';form.hidden=false;field.focus();
+    });
+    form.addEventListener('submit',event=>{
+      event.preventDefault();const text=field.value.trim();if(!selected||!text)return;
+      const note={x:selected.x,y:selected.y,text};
+      if(Number.isInteger(selected.index))notes[selected.index]=note;else notes.push(note);
+      try { localStorage.setItem(storageKey,JSON.stringify(notes)); } catch { status.textContent='Notes are visible but browser storage is unavailable. Export notes to keep them.'; }
+      selected=null;form.hidden=true;paintNotes();
+    });
+    document.getElementById('cancel').addEventListener('click',()=>{selected=null;form.hidden=true;});
+    document.getElementById('export').addEventListener('click',()=>{
+      const blob=new Blob([JSON.stringify({game:'Godlings demo',coordinateSpace:'normalized canvas',notes},null,2)],{type:'application/json'});
+      const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='godlings-review-notes.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    });
+    paintNotes();
+    createUnityInstance(canvas,{
+      dataUrl:'Build/Web.data',frameworkUrl:'Build/Web.framework.js',codeUrl:'Build/Web.wasm',
+      streamingAssetsUrl:'StreamingAssets',companyName:'Godlings',productName:'Godlings Demo',productVersion:'1.0',
+      autoSyncPersistentDataPath:true,
+      showBanner:(message,type)=>{if(type==='error'){const error=document.getElementById('error');error.textContent=message;error.hidden=false;}},
+    },progress=>status.textContent='Loading game… '+Math.round(progress*100)+'%').then(game=>{
+      instance=game;window.godlingsInstance=game;pause.disabled=false;annotate.disabled=false;
+      status.textContent='Click the game to play. WASD/keypad moves; arrows attack. Annotate pauses the game.';
+      canvas.focus();
+    }).catch(error=>{document.getElementById('error').hidden=false;document.getElementById('error').textContent=String(error);});
+  </script>
+</body>
+</html>

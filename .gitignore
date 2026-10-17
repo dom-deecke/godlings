@@ -1,3 +1,24 @@
-# Local asset-processing scripts, dependencies, and verification previews.
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+Recordings/
 .work/
-outputs/**/*.inspect.ndjson
+outputs/
+.DS_Store
+.vs/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.unityproj
+*.opendb
+*.VC.db
+.env
+.env.*

@@ -1,0 +1,91 @@
+{
+  "status": "Names reconciled to the latest stats table by Dominik; handwritten traits and symbol meanings retain their source status",
+  "source": "Art/Originals/Untitled_Artwork 1.png",
+  "columns": [
+    "Plant",
+    "Names",
+    "Personality",
+    "Attribute",
+    "Power column (handwritten heading unclear)",
+    "Normal Attack",
+    "Unlabeled illustration column"
+  ],
+  "notes": [
+    "Power symbols are described visually; their effects have not been inferred.",
+    "The meaning of manifestation and its relationship to the unlabeled illustration column await confirmation.",
+    "This chart contains six character rows; the hanging-star concept contains five requested characters.",
+    "No values in this reference are approved gameplay parameters.",
+    "Hanging-star identities are recorded in character-concept-identities.json. Crops or cutouts have not yet been made."
+  ],
+  "characters": [
+    {
+      "name": "Fi",
+      "plant": "Fig",
+      "personality": "Shy",
+      "attribute": "Speed",
+      "power_symbol": "Snowflake-like symbol",
+      "normal_attack": "Pounce",
+      "unlabeled_object": "Fig fruit",
+      "confirmation_needed": []
+    },
+    {
+      "name": "Arci",
+      "plant": "Narcissus",
+      "personality": "Extroverted",
+      "attribute": "Defense",
+      "power_symbol": "Lightning-bolt-like symbol",
+      "normal_attack": "Scratch",
+      "unlabeled_object": "Narcissus flower",
+      "confirmation_needed": [],
+      "earlierChartName": "Nor"
+    },
+    {
+      "name": "yrrh",
+      "plant": "Myrrh",
+      "personality": "Curious",
+      "attribute": "Jump",
+      "power_symbol": "Three zigzag marks",
+      "normal_attack": "Peck",
+      "unlabeled_object": "Stoppered vial containing brown material",
+      "confirmation_needed": [
+        "Meaning of power symbol"
+      ],
+      "earlierChartName": "Myr"
+    },
+    {
+      "name": "Min",
+      "plant": "Mint",
+      "personality": "Brooding",
+      "attribute": "Recoil",
+      "power_symbol": "Musical notes",
+      "normal_attack": "Ram",
+      "unlabeled_object": "Red-and-white striped round object",
+      "confirmation_needed": [
+        "Normal attack handwriting appears to read Ram; confirm"
+      ]
+    },
+    {
+      "name": "Lau",
+      "plant": "Laurel",
+      "personality": "Dumb",
+      "attribute": "Attack",
+      "power_symbol": "Open toothed mouth and a small circle",
+      "normal_attack": "Bite",
+      "unlabeled_object": "Leafy sprig",
+      "confirmation_needed": []
+    },
+    {
+      "name": "Pom",
+      "plant": "Pomegranate",
+      "personality": "Sad",
+      "attribute": "None",
+      "power_symbol": "Jar labeled Glue",
+      "normal_attack": "Kick",
+      "unlabeled_object": "Red seed-like object",
+      "confirmation_needed": [
+        "Meaning of glue symbol and identity of red object"
+      ]
+    }
+  ],
+  "nameAuthority": "Art/Originals/WhatsApp Image 2026-10-17 at 11.53.23.jpeg"
+}

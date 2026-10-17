@@ -1,0 +1,31 @@
+{
+  "source": "Art/Originals/Untitled_Artwork.png",
+  "authority": "Dominik provided the names and visual identities in chat.",
+  "charactersInUserProvidedOrder": [
+    {
+      "name": "Fi",
+      "visualIdentity": "Sitting orange character"
+    },
+    {
+      "name": "Lau",
+      "visualIdentity": "Green crocodile character"
+    },
+    {
+      "name": "yrrh",
+      "visualIdentity": "Blue bird character"
+    },
+    {
+      "name": "Min",
+      "visualIdentity": "Pink character"
+    },
+    {
+      "name": "Arci",
+      "visualIdentity": "Flying yellow character"
+    }
+  ],
+  "notes": [
+    "Pom appears in the reference tables but is not one of these five identified figures.",
+    "Source originals remain unchanged.",
+    "Isolation format awaits confirmation: rectangular crops or transparent cutouts."
+  ]
+}

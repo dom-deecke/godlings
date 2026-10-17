@@ -1,0 +1,115 @@
+{
+  "source": "Art/Originals/WhatsApp Image 2026-10-17 at 11.53.23.jpeg",
+  "status": "Sampled reference colors; not an approved final game palette",
+  "method": "Median RGB per channel from 10x14-pixel header patches and 10x15-pixel body patches, excluding text and grid lines. JPEG compression makes values approximate.",
+  "characters": [
+    {
+      "sourceColumn": 1,
+      "name": "Fi",
+      "header": "#DA954A",
+      "bodyTint": "#F8E6D0",
+      "headerSample": {
+        "x": 136,
+        "y": 30,
+        "width": 10,
+        "height": 14
+      },
+      "bodySample": {
+        "x": 136,
+        "y": 215,
+        "width": 10,
+        "height": 15
+      }
+    },
+    {
+      "sourceColumn": 2,
+      "name": "Arci",
+      "header": "#F8DA78",
+      "bodyTint": "#FCF2CF",
+      "headerSample": {
+        "x": 262,
+        "y": 30,
+        "width": 10,
+        "height": 14
+      },
+      "bodySample": {
+        "x": 262,
+        "y": 215,
+        "width": 10,
+        "height": 15
+      }
+    },
+    {
+      "sourceColumn": 3,
+      "name": "yrrh",
+      "header": "#173760",
+      "bodyTint": "#7CA6D8",
+      "headerSample": {
+        "x": 388,
+        "y": 30,
+        "width": 10,
+        "height": 14
+      },
+      "bodySample": {
+        "x": 388,
+        "y": 215,
+        "width": 10,
+        "height": 15
+      }
+    },
+    {
+      "sourceColumn": 4,
+      "name": "Min",
+      "header": "#9A5277",
+      "bodyTint": "#CEA8BD",
+      "headerSample": {
+        "x": 514,
+        "y": 30,
+        "width": 10,
+        "height": 14
+      },
+      "bodySample": {
+        "x": 514,
+        "y": 215,
+        "width": 10,
+        "height": 15
+      }
+    },
+    {
+      "sourceColumn": 5,
+      "name": "Lau",
+      "header": "#78A65B",
+      "bodyTint": "#BBD6AB",
+      "headerSample": {
+        "x": 640,
+        "y": 30,
+        "width": 10,
+        "height": 14
+      },
+      "bodySample": {
+        "x": 640,
+        "y": 215,
+        "width": 10,
+        "height": 15
+      }
+    },
+    {
+      "sourceColumn": 6,
+      "name": "Pom",
+      "header": "#624FA1",
+      "bodyTint": "#B2A7D2",
+      "headerSample": {
+        "x": 766,
+        "y": 30,
+        "width": 10,
+        "height": 14
+      },
+      "bodySample": {
+        "x": 766,
+        "y": 215,
+        "width": 10,
+        "height": 15
+      }
+    }
+  ]
+}

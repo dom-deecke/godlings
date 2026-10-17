@@ -1,0 +1,205 @@
+GODLINGS — HANDOFF PROMPT FOR DOMINIK'S CODEX
+Snapshot: 17 October 2026
+
+You are continuing Godlings with Dominik (Monkikin), its creator and artist.
+Read this file, PLAY-DEMO.txt, PLAYTEST-NOTES.txt, and Design/Data before editing.
+Inspect the actual checkout and report its state before proposing the next step.
+Do not assume that an old localhost server or the previous machine's paths exist.
+
+CREATIVE OWNERSHIP AND WORKING RULES
+Dominik owns all creative concepts, characters, story, visual design, and choices.
+He is ideologically opposed to AI art and cautious about AI coding. Do not generate
+art, redraw his work, invent animations, expand the story, invent names, or make
+creative decisions without asking him. Implement readable, well-commented C#.
+Deterministic cropping, transparent extraction, palette hue variants, flipping Fi,
+scaling the supplied enemy into the demo boss, and deriving a meteor silhouette
+were expressly approved. Preserve originals. These approvals do not authorize new
+visual invention. Interview Dominik when a decision affects his content.
+
+REPOSITORY AND PLATFORM
+The ONLY target repository is https://github.com/dom-deecke/godlings .
+The owner is dom-deecke (earlier domi-deecke was corrected). BENEBION is a collaborator,
+not the repository destination. Never push this project into a BENEBION repository.
+Unity and Steam are primary goals; keep mobile/App Store possibilities open.
+This is a native Unity C# project with a WebGL review build, not a JavaScript game.
+Open the root containing Assets, Packages, and ProjectSettings in Unity Hub.
+Editor version: 6000.6.6f1. Input System: 1.20.1; both input handlers enabled.
+Scene: Assets/Godlings/Scenes/Demo.unity.
+If needed use the Godlings menu/Editor DemoBuilder to regenerate the demo scene.
+No new license for the art has been granted: all artwork belongs to its creator.
+
+APPROVED STORY AND THEMES
+The Godlings are the children of the god of the stars and a soldier who died while
+they were infants. Unprepared for mortality, their father became overwhelmed by
+grief, anger, and despair, abandoned his children, and could no longer uphold the
+celestial balance. Their grandmother, the goddess of the earth, secretly raised
+them in a forest hut, shielding them from their divine lineage and the intrigues
+and revolts among the other gods. Their father has long regretted abandoning them.
+One of eight moon goddesses visits the children and seeks their help in bringing
+him back to his divine duties. She is NOT an emissary of the other seven: those
+seven are involved in the intrigues surrounding the celestial imbalance.
+Divine power comes from belief. Initially no creatures believe in the children,
+so they have no divine power. Their experiences lead to acts that kindle initial
+faith among the world's creatures. That faith, the creatures' perceptions, and
+subsequent experiences shape their emerging divinity in a continuing cycle.
+Their acts are not necessarily explicit moral choices. Good and evil are not
+absolute categories here; consequences and perceptions shape what follows.
+The game's objective is to guide the children toward the beings of light they
+were destined to be and away from darker impulses, restoring celestial balance.
+Do not add lore or implement a morality system without Dominik's direction.
+The current demo implements combat only; faith and story progression are not built.
+
+CHARACTERS AND REFERENCE DATA
+Fi is the orange FOX, playable first, referred to as she. Arci is the yellow catlike
+character; Yrrh the blue bird; Min the pink horned character; Lau the green crocodile.
+The latest table also lists Pom, who is not in the supplied five-character sheet.
+Use the latest table names, not earlier chart spellings such as Nar or Myr.
+Design/Data/character-weapon-stats.json digitizes the latest approved table.
+Design/References contains earlier chart transcription and identity notes; preserve
+provenance, and use later user confirmations to resolve conflicts.
+Table weapon associations: Fi/swords, Arci/whips, Yrrh/slingshots, Min/staff,
+Lau/hammer, Pom/boomerang. Conversion of table stats to gameplay units is unspecified;
+do not replace the demo's separately approved combat values with table numbers.
+The earlier chart records personality, attributes, and manifestation symbols.
+Ambiguous symbol meaning must be confirmed rather than invented.
+
+ART AND PALETTE
+Art/Originals preserves supplied originals, including Kids.png, the character chart,
+stats screenshot, level sketch, first enemy, concept scenes, logo, and meteor.
+Art/Characters contains 15 deterministic crops (three drawings per supplied child).
+Kids source labels/notes were excluded only where detached from the drawings.
+Assets/Godlings/Art contains the imported sprites used in the game.
+The enemy is Untitled_Artwork 5.png, NOT an approved final boss design. The current
+boss is an expressly requested larger version of that same enemy. Enemy hue
+variants follow the table palette, preserving flower and feet.
+Exact dark/light palette pairs:
+Fi: #DA954A / #F8E6D0; Arci: #F8DA78 / #FCF2CF;
+Yrrh: #173760 / #7CA6D8; Min: #9A5277 / #CEA8BD;
+Lau: #78A65B / #BBD6AB; Pom: #624FA1 / #B2A7D2.
+Floor is the pale green #BBD6AB. Final floor tiles, scenery, animations, and complete
+title screen will come from Dominik. Current floor/UI are functional placeholders.
+Meteor source: Art/Originals/Untitled_Artwork 7.png.
+Runtime sprites: Assets/Godlings/Art/Meteors/meteor-with-crater.png and meteor-shadow.png.
+The supplied rock and raised brown soil are preserved. ONLY the bottom soil-contact
+rim is blended toward pale green. Do not hue-shift the whole soil again.
+The shadow follows the rock silhouette, excluding lifted soil. No generated art.
+Art/Palettes records asset preparation and color provenance.
+
+CURRENT GAMEPLAY
+Continuous real-time action on discrete grid cells; actors slide smoothly between
+centers. Eight movement directions, cardinal attacks only. Walls prevent diagonal
+corner cutting. Enemy actors are gridlocked too. Angled perspective, not top-down;
+the camera scrolls with Fi. Occupancy reserves origin and target during movement.
+Keyboard: WASD and numeric keypad move; arrows attack. Movement and attack direction
+are independent. Holding movement repeats after a short delay. Mouse aiming and
+left-click attack were explicitly rejected. Controller uses left-stick movement,
+right-stick cardinal aiming and trigger attack. Snap to nearest cardinal; exact
+stick ties retain prior matching direction. See DemoInput for precise bindings.
+Controls are rebindable. F1 opens controls; F2 pauses for annotations.
+
+Fi: 10 health, sword 1.5 damage, three tiles straight ahead. Sword's 0.12-second active
+hurtbox follows Fi's actual position during slides, hits each target once per swing,
+and respects walls. Attack cooldown 0.4 seconds. After taking damage, Fi is invincible
+for 10 gameplay update frames; paused frames do not consume invincibility.
+Current tuning defaults: Fi step 0.10 seconds, hold delay 0.18 seconds. Earlier
+0.15/0.35 values were superseded during playtesting and remain adjustable.
+Regular enemies: 3 health; 2 contact damage, at the attack cooldown cadence;
+0.45 seconds per step; sensing/pursuit radius 4 tiles (Euclidean). Outside that
+radius they stop pursuing. Show health. Surviving hits knock them one legal tile
+backwards over 0.5 seconds, interrupting their current step; blocked recoil staggers
+in place. No contact damage during recoil. Boss recoil was not added.
+Boss: 50 health, about twice normal enemy visual height. Cardinal proximity within
+two tiles triggers a Fi-facing 6-wide by 2-deep swipe: fixed red footprint, warning
+2 seconds, damage 4, cooldown 5 seconds between warning starts. Diagonal proximity
+alone does not trigger it. Footprint stays where warned so Fi can evade.
+Death and boss victory offer Restart.
+
+LEVEL AND METEORS — LATEST REQUIREMENTS
+Design/Data/level-sketch.json is the authoritative layout, copied by the builder to
+Assets/Godlings/Data/level-sketch.json. 79 columns by 6 rows, 444 floor cells.
+Fi starts (1,2). Four enemies start (7,2), (9,4), (16,4), (17,3). Boss (78,2).
+Original sketch corridor is retained; a requested 50x6 meteor run occupies columns
+20..69 before the boss area 70..78. Coordinates start at lower left.
+Meteors activate as Fi approaches the second group, at column 12. Targets begin at
+that group's starting line, column 16, and extend through the run and boss area.
+Choose visible legal footprints around Fi; do not spawn hazards offscreen as fallback.
+First warning is immediate on activation; subsequent warning intervals default to random 2..2.43s (latest screenshot).
+The motion panel still permits adjustment up to 10 seconds.
+Each drop randomly chooses size 1x1, 2x2, or 3x3. Artwork, shadow, impact hitbox, and
+crater obstruction use the SAME size and position. Even sizes center between tiles.
+A growing rock-shaped shadow replaces red meteor warnings for 1.5 seconds, then the
+impact deals 3 damage to Fi, regardless of size. Crater blocks Fi/enemies for 2 seconds;
+enemies route around it. Do not draw a new crater or rock.
+Meteors cannot land on live enemies or the boss: selection excludes enemy origin and
+reserved step target, and boss tile. If an enemy enters a warned footprint before
+impact, CANCEL that drop, rather than teleporting the warned hitbox. No safe visible
+location means skip the drop. Meteor damage does not apply to enemies or boss.
+Smaller drops sound quieter, higher, and have shorter impact tails.
+The boss's logical occupancy is currently one tile despite its larger visual sprite;
+ask before changing its gameplay footprint.
+
+TEMPORARY REVIEW TOOLS AND AUDIO
+Motion panel pauses play, scrolls, and exposes Fi/enemy step duration, hold delay,
+attack cooldown, sensing radius, meteor minimum/maximum interval (2..10), and Fi/enemy
+horizontal/vertical artwork offsets. Saved defaults: Fi offset (-0.15,-0.05), enemy offset (0.04,-0.17).
+Offsets move visual children only, never grid
+positions or hitboxes. Values are session-only rule clones; Restart resets them.
+Close and try resumes. Disable EnableMotionPanel/remove this tool for production.
+WebReview/index.html adds pause, annotate, and export-notes tools around Unity WebGL.
+Review notes use browser localStorage key godlings-review-notes-v1; export JSON to
+preserve them. No backend is implemented.
+Audio is temporary procedural synthesis: Fi has a young fox yelp (NOT a spoken child
+'ouch'); enemies burp; boss hit burp is louder, deeper, about 1.4 seconds, with a
+separate non-stacking source. Meteors have falling and impact sounds.
+A real fox recording was previewed, but user explicitly chose to keep the synthetic
+yelp for now. Do not add downloaded or generated voice recordings without direction.
+
+CODE MAP AND BUILD/TEST
+Core: GridBoard (occupancy/temporary blockers), AttackPatterns, Health,
+FrameInvulnerability, EnemyAwareness, RockAttackSchedule, BossSwipeSchedule.
+Runtime: DemoGame (orchestration/UI/camera), GridActor (smooth steps/recoil),
+GridProjection (angled mapping), DemoLevel, DemoRules, DemoInput, MeteorAudio,
+DamageAudio. GeneratedMeshLifetime cleans runtime meshes.
+Editor: Godlings.Editor.DemoBuilder.Prepare / BuildWeb / BuildMac and CoreChecks.Run.
+Always select -buildTarget WebGL or StandaloneOSX explicitly in batch builds.
+Example: Unity -batchmode -quit -projectPath PROJECT -buildTarget WebGL
+-executeMethod Godlings.Editor.DemoBuilder.BuildWeb -logFile BUILD_LOG
+Mac: replace target with StandaloneOSX and method with BuildMac.
+Build outputs: Builds/Web and Builds/Mac/Godlings Demo.app; these are ignored in Git.
+Serve the WebGL directory over HTTP (do not open index.html as file://):
+python3 -m http.server 8765 --bind 127.0.0.1 --directory Builds/Web
+Then open http://127.0.0.1:8765/ .
+The opt-in development player flag -godlingsSmoke checks real input, diagonal motion,
+independent attacks, sensing, controller cardinal snap, rebinding, defeat, restart,
+and boss victory. It creates a temporary boss fixture without saving it to the level.
+Core checks cover reservations, corners, blockers, sword motion, health, invincibility,
+warning timing, random intervals, size footprints, safe empty target sets, and swipes.
+Use actual test logs before claiming success. Do not add tests that only restate code.
+
+ENVIRONMENT AND HONEST LIMITATIONS
+Original machine project: /Users/arved/Documents/ChatGPT/Godlings .
+iCloud aggressively offloaded Documents files and Git objects, stalling Unity and Git.
+Successful builds used a fully local copy at /private/tmp/godlings-local-20261017.
+Tested Assets, Packages, ProjectSettings, scene, and metadata were copied back together
+so this project folder is coherent. Build caches are regenerable; do not copy Library,
+Temp, or stale metadata individually into a fresh clone. Prefer a non-iCloud folder
+for Dominik's clone. Old caches were preserved locally, not included in the repository.
+The installed GitHub integration has returned 403 Resource not accessible by integration
+on writes even though collaborator invitation was accepted. Browser GitHub sign-in has
+worked for asset uploads. Do not request passwords or tokens in chat; use normal sign-in.
+Do not force-push or overwrite unrelated repository content to work around access.
+
+NOT YET IMPLEMENTED / NEXT WORK WITH DOMINIK
+Final tiles/scenery/title, directional animation frames, full boss design, additional
+playable children and weapon types, faith/divinity progression, story/dialogue, saving,
+Steam integration, mobile controls/builds, and production UI/audio are not complete.
+The temporary enlarged enemy boss is just the approved demo stand-in.
+Begin by opening and running the existing demo, reviewing Dominik's exported notes,
+and asking which behavior or supplied asset he wants to work on next. Preserve the
+current approved mechanics unless he asks to change them. Do not fill creative gaps.
+
+GITHUB DISTRIBUTION
+The complete project, original artwork, derived artwork, and this handoff are
+stored as normal files in https://github.com/dom-deecke/godlings .
+Clone or download the repository and open its root in Unity Hub.
+The release ZIP is a historical backup, not required to obtain the source.
