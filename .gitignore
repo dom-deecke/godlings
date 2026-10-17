@@ -1,0 +1,3 @@
+# Local asset-processing scripts, dependencies, and verification previews.
+.work/
+outputs/**/*.inspect.ndjson
