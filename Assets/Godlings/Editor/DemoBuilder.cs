@@ -103,6 +103,31 @@ namespace Godlings.Editor
             Debug.Log("GODLINGS_MAC_BUILD_PASSED");
         }
 
+        // Mono supports building Windows x64 from this Mac. IL2CPP needs a
+        // Windows editor and C++ toolchain; keep that separate from this demo.
+        [MenuItem("Godlings/Build Windows demo")]
+        public static void BuildWindows()
+        {
+            if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64))
+                throw new Exception("Install Windows Build Support (Mono) for this Unity editor first.");
+            Prepare();
+            PlayerSettings.SetScriptingBackend(UnityEditor.Build.NamedBuildTarget.Standalone, ScriptingImplementation.Mono2x);
+            var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
+                scenes = new[] { ScenePath },
+                locationPathName = "Builds/Windows/Godlings Demo.exe",
+                target = BuildTarget.StandaloneWindows64,
+                options = BuildOptions.Development
+            });
+            if (report.summary.result != BuildResult.Succeeded)
+                throw new Exception("Windows build failed: " + report.summary.result);
+            File.WriteAllText("Builds/Windows/READ-ME.txt",
+                "Godlings Windows x64 demo. Keep the entire folder together.\n" +
+                "Run Godlings Demo.exe. Controls and playtest notes are in PLAY-DEMO.txt.\n" +
+                "Built on macOS; playtest on a Windows PC before distributing.\n");
+            File.Copy("PLAY-DEMO.txt", "Builds/Windows/PLAY-DEMO.txt", true);
+            Debug.Log("GODLINGS_WINDOWS_BUILD_PASSED");
+        }
+
         public static void BuildWeb()
         {
             Prepare();
